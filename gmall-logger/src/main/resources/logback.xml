@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="LOG_HOME" value="d:/opt/module/logs" />
+    <property name="LOG_HOME" value="/opt/module/gmall-flink/rt_applog/logs" />
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
