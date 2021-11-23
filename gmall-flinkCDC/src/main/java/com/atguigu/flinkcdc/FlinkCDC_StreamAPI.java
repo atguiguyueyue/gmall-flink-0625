@@ -10,14 +10,14 @@ import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.environment.CheckpointConfig;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
-public class Flinkcdc_StreamApi {
+public class FlinkCDC_StreamAPI {
     public static void main(String[] args) throws Exception {
         //1.获取流的执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         env.setParallelism(1);
 
-        //2.Flink-CDC将读取binlog的位置信息以状态的方式保存在CK,如果想要做到断点续传,需要从Checkpoint或者Savepoint启动程序
+      /*  //2.Flink-CDC将读取binlog的位置信息以状态的方式保存在CK,如果想要做到断点续传,需要从Checkpoint或者Savepoint启动程序
         //2.1 开启Checkpoint,每隔5秒钟做一次CK
         env.enableCheckpointing(5000L);
         //2.2 指定CK的一致性语义
@@ -29,7 +29,7 @@ public class Flinkcdc_StreamApi {
         //2.5 设置状态后端
         env.setStateBackend(new FsStateBackend("hdfs://hadoop102:8020/flinkCDC"));
         //2.6 设置访问HDFS的用户名
-        System.setProperty("HADOOP_USER_NAME", "atguigu");
+        System.setProperty("HADOOP_USER_NAME", "atguigu");*/
 
 
         DebeziumSourceFunction<String> sourceFunction = MySQLSource.<String>builder()
